@@ -1,0 +1,94 @@
+/* Classic Theme For First User Selection */
+body {
+    padding: 0;
+    margin: 0;
+    background-color: bisque;
+}
+#navbar {
+    border-radius: 20px;
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color:black;
+}
+#navbar-logo {
+    text-decoration: none;
+}
+.fa-user-circle {
+    color: black;
+    font-size: 70px;
+    margin-top: 5px;
+}
+.versus-img {
+    width:32px;
+}
+#how-to-play {
+    display: flex;
+    color: white;
+    text-decoration: none;
+    font-size: 25px;
+    align-items: center;
+    margin-top: 32px;
+    margin-left:2em;
+}
+#brand-text {
+    font-family: 'Rubik Beastly',cursive;
+    margin:20px;
+    font-size: 70px;
+    line-height: 70px;
+}
+#rock-text{
+    color:#ee3393;
+}
+#paper-text{
+    color:#f9ca00;
+}
+#scissors-text{
+    color:#01cae6;
+}
+.logo-image {
+    width: 60px;
+    height: 60px;
+}
+#dropdown-btn-circle {
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    background-color: white;
+    margin-top: 15px;
+}
+#dropdown-btn {
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+}
+#dropdown-container {
+    display: none;
+    flex-direction: column;
+}
+@media only screen and (max-width:600px) {
+    #navbar-logo {
+        display: inline-block;
+    }
+    #brand-text {
+        font-size: 20px;
+    }
+}
+@media only screen and (min-width:600px) and (max-width:768px) {
+    #brand-text {
+        font-size: 28px;
+    }
+}
+@media only screen and (min-width:768px) and (max-width:1200px) {
+    #brand-text {
+        font-size: 38px;
+    }
+}
+/* @media only screen and (min-width:1200px) {
+    #brand-text {
+        font-size: 85px;
+        line-height: 85px;
+    }
+} */
