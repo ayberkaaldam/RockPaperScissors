@@ -31,8 +31,6 @@ body {
     text-decoration: none;
     font-size: 25px;
     align-items: center;
-    margin-top: 32px;
-    margin-left:2em;
     text-shadow:
     0 0 7px #fff,
     0 0 10px #fff,
@@ -108,12 +106,19 @@ body {
     background-color: white;
     z-index: 1;
 }
-#information {
+#center-area {
+    width: auto;
+    height: calc(100vh - 260px);
     display: flex;
     justify-content: center;
+}
+#information {
+    display: flex;
     align-items: center;
-    margin-top: 80px;
+    justify-content: center;
     font-family: 'Lato', sans-serif;
+    text-align: justify;
+    height: auto;
 }
 #container {
     display: flex;
@@ -125,6 +130,7 @@ body {
     background-color: #000;
     border-radius: 25px;
     overflow: hidden;
+    justify-content: center;
 }
 #container > h1 {
     font-size: 42px;
@@ -182,27 +188,160 @@ body {
 #contact > a::nth-child(2) {
     margin-bottom: 15px;
 }
+#github {
+    width: 90px;
+}
+#linkedin {
+    width: 70px;
+}
+#instagram {
+    width: 80px;
+}
 @media only screen and (max-width:600px) {
-    #navbar-logo {
-        display: inline-block;
+    #navbar {
+        margin-bottom: 0px;
+    }
+    #user-choose {
+        display: flex;
+        align-items: center;
+    }
+    .fa-user-circle {
+        color: black;
+        font-size: 30px;
+        margin-top: 5px;
+        z-index: 2;
+    }
+    #dropdown-btn-circle {
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        background-color: white;
+        z-index: 2;
+        margin-top: 0px;
+    }
+    #dropdown-btn {
+        cursor: pointer;
+        z-index: 2;
+        display: flex;
+        justify-content: center;
+        align-self: center;
+    }
+    #dropdown-container {
+        background-color: white;
+        display: none;
+        position: absolute;
+        flex-direction: column;
+        justify-content: center;
+        width: 40px;
+        border-radius:0px 0px 50px 50px ;
+        box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+        margin-top: 165px;
+        z-index: 2;
+    }
+    .logo-image {
+        width: 26px;
+        height: 26px;
+        border: 2px solid black;
+        border-radius: 50%;
+        margin: 5px;
+    }
+    #complete-circle {
+        display: none;
+        position: absolute;
+        top:45px;
+        width: 40px;
+        height: 42px;
+        background-color: white;
+        z-index: 1;
     }
     #brand-text {
-        font-size: 20px;
+        font-size: 12px;
+        margin: 0px;
+    }
+    .versus-img {
+        width: 8px;
+    }
+    #how-to-play {
+        font-size: 10px;
+    }
+    #center-area {
+        width: auto;
+        height: calc(100vh - 160px);
+        display: flex;
+        justify-content: center;
+    }
+    #conrainer {
+        width: auto;
+    }
+    .logo-in-text {
+        width: 40px;
+        height: 40px;
+        margin:5px;
+    }
+    #container > h1 {
+        font-size: 18px;
+    }
+    #container > p {
+        padding: 0px 10px 0px 10px;
+        font-size: 12px;
+        margin-top: 0;
+    }
+    #glhf {
+        font-size: 16px;
+    }
+    #footer {
+        height: 70px;
+    }
+    #footer >p {
+        font-size: 12px;
+        color: #fff;
+    }
+    #contact > a >img{
+        width: 30px;
+        height: 30px;
     }
 }
 @media only screen and (min-width:600px) and (max-width:768px) {
     #brand-text {
-        font-size: 28px;
+        font-size: 18px;
+    }
+    .versus-img {
+        width: 12px;
+    }
+    #how-to-play {
+        font-size: 18px;
+    }
+    #conrainer {
+        width: auto;
+    }
+    #container > h1 {
+        font-size: 32px;
+    }
+    #container > p {
+        padding: 0px 15px 0px 15px;
+        font-size: 18px;
+        margin-top: 0;
     }
 }
 @media only screen and (min-width:768px) and (max-width:1200px) {
     #brand-text {
         font-size: 38px;
     }
-}
-/* @media only screen and (min-width:1200px) {
-    #brand-text {
-        font-size: 85px;
-        line-height: 85px;
+    .versus-img {
+        width:22px;
     }
-} */
+    #how-to-play {
+        font-size: 20px;
+    }
+    #container {
+        width: 90vw;
+    }
+    #container > h1 {
+        font-size: 32px;
+    }
+    #container > p {
+        padding: 0px 35px 0px 35px;
+        font-size: 24px;
+        margin-top: 0;
+    }
+}
