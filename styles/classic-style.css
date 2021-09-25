@@ -98,21 +98,93 @@ body {
     z-index: 1;
 }
 @media only screen and (max-width:600px) {
-    #navbar-logo {
-        display: inline-block;
+    #navbar {
+        margin-bottom: 0px;
+    }
+    #user-choose {
+        display: flex;
+        align-items: center;
+    }
+    .fa-user-circle {
+        color: black;
+        font-size: 30px;
+        margin-top: 5px;
+        z-index: 2;
+    }
+    #dropdown-btn-circle {
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        background-color: white;
+        z-index: 2;
+        margin-top: 0px;
+    }
+    #dropdown-btn {
+        cursor: pointer;
+        z-index: 2;
+        display: flex;
+        justify-content: center;
+        align-self: center;
+    }
+    #dropdown-container {
+        background-color: white;
+        display: none;
+        position: absolute;
+        flex-direction: column;
+        justify-content: center;
+        width: 40px;
+        border-radius:0px 0px 50px 50px ;
+        box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+        margin-top: 165px;
+        z-index: 2;
+    }
+    .logo-image {
+        width: 26px;
+        height: 26px;
+        border: 2px solid black;
+        border-radius: 50%;
+        margin: 5px;
+    }
+    #complete-circle {
+        display: none;
+        position: absolute;
+        top:45px;
+        width: 40px;
+        height: 42px;
+        background-color: white;
+        z-index: 1;
     }
     #brand-text {
-        font-size: 20px;
+        font-size: 12px;
+        margin: 0px;
+    }
+    .versus-img {
+        width: 8px;
+    }
+    #how-to-play {
+        font-size: 10px;
     }
 }
 @media only screen and (min-width:600px) and (max-width:768px) {
     #brand-text {
-        font-size: 28px;
+        font-size: 18px;
+    }
+    .versus-img {
+        width: 12px;
+    }
+    #how-to-play {
+        font-size: 18px;
     }
 }
 @media only screen and (min-width:768px) and (max-width:1200px) {
     #brand-text {
         font-size: 38px;
+    }
+    .versus-img {
+        width:22px;
+    }
+    #how-to-play {
+        font-size: 20px;
     }
 }
 /* @media only screen and (min-width:1200px) {
