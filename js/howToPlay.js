@@ -53,19 +53,19 @@ const dropdownFirstItem= document.getElementById("dropdown-first-item");
 const dropdownSecondItem= document.getElementById("dropdown-second-item");
 const dropdownThirdItem= document.getElementById("dropdown-third-item");
 function changeCharacterLogoRock() {
-  dropdownButton.innerHTML =`<img class="logo-image" style="z-index:2" id="rock-bg" src="./assets/images/rock-logo.png"></div>`
+  dropdownButton.innerHTML =`<img class="logo-image" style="z-index:2" id="rock-bg" src="../assets/images/rock-logo.png"></div>`
   dropdownFirstItem.style.display="none";
   dropdownSecondItem.style.display="flex";
   dropdownThirdItem.style.display="flex";
 }
 function changeCharacterLogoPaper() {
-  dropdownButton.innerHTML=`<img class="logo-image" style="z-index:2" id="paper-bg" src="./assets/images/paper-logo.png">`;
+  dropdownButton.innerHTML=`<img class="logo-image" style="z-index:2" id="paper-bg" src="../assets/images/paper-logo.png">`;
   dropdownFirstItem.style.display="flex";
   dropdownSecondItem.style.display="none";
   dropdownThirdItem.style.display="flex";
 }
 function changeCharacterLogoScissors() {
-  dropdownButton.innerHTML=`<img class="logo-image" style="z-index:2;background-color:#01cae6" id="paper-bg" src="./assets/images/scissors-logo.png">`;
+  dropdownButton.innerHTML=`<img class="logo-image" style="z-index:2;background-color:#01cae6" id="paper-bg" src="../assets/images/scissors-logo.png">`;
   dropdownFirstItem.style.display="flex";
   dropdownSecondItem.style.display="flex";
   dropdownThirdItem.style.display="none";
