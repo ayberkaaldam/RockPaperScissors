@@ -97,6 +97,77 @@ body {
     background-color: white;
     z-index: 2;
 }
+#rock-hand {
+    width: 331px;
+    height: 398px;
+    margin-right:10px ;
+}
+#rock-hand:hover {
+    animation: shakeHorizontal 0.82s cubic-bezier(.36,.07,.19,.97) both;
+    transform: translate3d(0, 0, 0);
+}
+#paper-hand {
+    width: 408px;
+    height: 341px;
+    margin-left: 35px;
+}
+#first-row {
+    display: flex;
+    justify-content: center;
+}
+#paper-hand:hover {
+    animation: shakeHorizontal 0.82s cubic-bezier(.36,.07,.19,.97) both;
+    transform: translate3d(0, 0, 0);
+}
+#scissors-hand {
+    width: 281px;
+    height: 358px;
+}
+#scissors-hand:hover {
+    animation: shakeVertical 0.82s cubic-bezier(.36,.07,.19,.97) both;
+    transform: translate3d(0, 0, 0);
+}
+#second-row {
+    display: flex;
+    justify-content: center;
+}
+@keyframes shakeVertical {
+    10%, 90% {
+      transform: translate3d(-1px, 0, 0);
+    }
+    
+    20%, 80% {
+      transform: translate3d(2px, 0, 0);
+    }
+  
+    30%, 50%, 70% {
+      transform: translate3d(-4px, 0, 0);
+    }
+  
+    40%, 60% {
+      transform: translate3d(4px , 0, 0);
+    }
+}
+@keyframes shakeHorizontal {
+    10%, 90% {
+      transform: translate3d(0, -1px, 0);
+    }
+    
+    20%, 80% {
+      transform: translate3d(0, 2px, 0);
+    }
+  
+    30%, 50%, 70% {
+      transform: translate3d(0, -4px, 0);
+    }
+  
+    40%, 60% {
+      transform: translate3d(0  , 4px, 0);
+    }
+  }
+
+
+
 @media only screen and (max-width:600px) {
     #navbar {
         margin-bottom: 0px;
