@@ -23,6 +23,8 @@ rockLogo.addEventListener("click", changeNeonTextRock);
 rockLogo.addEventListener("click", changeBackgroundColorRock);
 rockLogo.addEventListener("click",changeCharacterLogoRock);
 rockLogo.addEventListener("click",dropdownEventDefault);
+rockLogo.addEventListener("click",changeGameModeRock);
+
 
 
 //Click on Paper Character
@@ -31,6 +33,7 @@ paperLogo.addEventListener("click", changeNeonTextPaper);
 paperLogo.addEventListener("click", changeBackgroundColorPaper);
 paperLogo.addEventListener("click", changeCharacterLogoPaper);
 paperLogo.addEventListener("click", dropdownEventDefault);
+paperLogo.addEventListener("click",changeGameModePaper);
 
 
 //Click on Scissors Character
@@ -39,6 +42,7 @@ scissorsLogo.addEventListener("click",changeNeonTextScissors);
 scissorsLogo.addEventListener("click", changeBackgroundColorScissors);
 scissorsLogo.addEventListener("click", changeCharacterLogoScissors);
 scissorsLogo.addEventListener("click", dropdownEventDefault);
+scissorsLogo.addEventListener("click",changeGameModeScissors);
 
 
 //Click on Default Character
@@ -110,4 +114,20 @@ function changeBackgroundColorScissors() {
 }
 function changeBackgroundColorDefault() {
   document.body.style="#000";
+}
+
+//Game Mode Change
+let gameMode =0;
+
+function changeGameModeRock () {
+  gameMode =1 ;
+  console.log(gameMode);
+}
+function changeGameModePaper () {
+  gameMode=2;
+  console.log(gameMode);
+}
+function changeGameModeScissors() {
+  gameMode =3;
+  console.log(gameMode);
 }
