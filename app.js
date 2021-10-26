@@ -117,7 +117,7 @@ function changeBackgroundColorDefault() {
 }
 
 //Game Mode Change
-let gameMode =0;
+  var gameMode=0;
 
 function changeGameModeRock () {
   gameMode =1 ;
@@ -131,3 +131,295 @@ function changeGameModeScissors() {
   gameMode =3;
   console.log(gameMode);
 }
+
+
+const firstRow = document.getElementById("first-row");
+const rockHandImage = document.getElementById("rock-hand");
+const paperHandImage = document.getElementById("paper-hand");
+const scissorsHandImage = document.getElementById("scissors-hand");
+let playerChoose = "none";
+var aiScore =0;
+let playerScore=0;
+const result = document.getElementById("result");
+const aiScoreTable = document.getElementById("ai-score");
+const playerScoreTable = document.getElementById("player-score");
+const nextRoundButton = document.getElementById("next-round-btn");
+const handResultRow =document.getElementById("hand-result-row");
+
+//Change image display function
+function imageDisplaysNone() {
+  rockHandImage.style.display="none";
+  paperHandImage.style.display="none";
+  scissorsHandImage.style.display="none";
+}
+function imageDisplaysBlock() {
+  rockHandImage.style.display="block";
+  paperHandImage.style.display="block";
+  scissorsHandImage.style.display="block";
+}
+
+
+rockHandImage.addEventListener("click",gameRock);
+function gameRock(){
+  imageDisplaysNone();
+  playerChoose="1";
+  console.log(playerChoose);
+  const hand1 = document.createElement("img");
+  hand1.src="./assets/images/rock-hand3.png";
+  hand1.className="hand1";
+  firstRow.appendChild(hand1);
+  const hand1Mirror = document.createElement("img");
+  hand1Mirror.className="hand1-mirror";
+  hand1Mirror.src="./assets/images/rock-hand3-mirror.png"
+  firstRow.appendChild(hand1Mirror);
+  aiChoose = Math.floor(Math.random() * 3)+1;
+  setTimeout(()=>{
+    hand1.style.display="none";
+    hand1Mirror.style.display="none";
+    if(aiChoose==1) {
+      const aiResult = document.createElement("img");
+      aiResult.src="./assets/images/rock-hand3.png"
+      aiResult.className="ai-result-rock";
+      handResultRow.appendChild(aiResult);
+    }
+    else if(aiChoose==2) {
+      const aiResult = document.createElement("img");
+      aiResult.src="./assets/images/paper-hand3.png"
+      aiResult.className="ai-result-paper";
+      handResultRow.appendChild(aiResult);
+    }
+    else if(aiChoose==3) {
+      const aiResult = document.createElement("img");
+      aiResult.src="./assets/images/scissors-hand3.png"
+      aiResult.className="ai-result-scissors";
+      handResultRow.appendChild(aiResult);
+    }
+    const handResult = document.createElement("img");
+    handResult.src="./assets/images/rock-hand3-mirror.png"
+    handResult.className="hand-result";
+    handResultRow.appendChild(handResult);
+    if(playerChoose==aiChoose) {
+      result.innerHTML="DRAW";
+      result.style.color="#000",
+      result.style.display="flex";
+    }
+    else if (aiChoose==2) {
+      if(gameMode==1){
+        result.innerHTML="LOSE";
+        result.style.color="#FF0000";
+        result.style.display="flex";
+        aiScore+=2;
+        aiScoreTable.innerHTML=aiScore;
+      }
+      else {
+        result.innerHTML="LOSE";
+        result.style.color="#FF0000";
+        result.style.display="flex";
+        aiScore++;
+        aiScoreTable.innerHTML=aiScore;
+      }
+    }
+    else if (aiChoose==3) {
+      if(gameMode==1){
+        result.innerHTML="WIN";
+        result.style.color="#008000";
+        result.style.display="flex";
+        playerScore+=2;
+        playerScoreTable.innerHTML=playerScore;
+      }
+      else {
+        result.innerHTML="WIN";
+        result.style.color="#008000";
+        result.style.display="flex";
+        playerScore++;
+        playerScoreTable.innerHTML=playerScore;
+      }    
+    }
+    nextRoundButton.style.display="block";
+    nextRoundButton.addEventListener("click",againGame);
+    function againGame(){
+      result.style.display="none";
+      nextRoundButton.style.display="none";
+      handResult.style.display="none";
+      handResultRow.innerHTML="";
+      imageDisplaysBlock();
+    }
+  },1600);
+}
+
+paperHandImage.addEventListener("click",gamePaper);
+function gamePaper() {
+  imageDisplaysNone();
+  playerChoose="2";
+  console.log(playerChoose);
+  const hand1 = document.createElement("img");
+  hand1.src="./assets/images/rock-hand3.png";
+  hand1.className="hand1";
+  firstRow.appendChild(hand1);
+  const hand1Mirror = document.createElement("img");
+  hand1Mirror.className="hand1-mirror";
+  hand1Mirror.src="./assets/images/rock-hand3-mirror.png"
+  firstRow.appendChild(hand1Mirror);
+  aiChoose = Math.floor(Math.random() * 3)+1;
+  setTimeout(()=>{
+    hand1.style.display="none";
+    hand1Mirror.style.display="none";
+    if(aiChoose==1) {
+      const aiResult = document.createElement("img");
+      aiResult.src="./assets/images/rock-hand3.png"
+      aiResult.className="ai-result-rock";
+      handResultRow.appendChild(aiResult);
+    }
+    else if(aiChoose==2) {
+      const aiResult = document.createElement("img");
+      aiResult.src="./assets/images/paper-hand3.png"
+      aiResult.className="ai-result-paper";
+      handResultRow.appendChild(aiResult);
+    }
+    else if(aiChoose==3) {
+      const aiResult = document.createElement("img");
+      aiResult.src="./assets/images/scissors-hand3.png"
+      aiResult.className="ai-result-scissors";
+      handResultRow.appendChild(aiResult);
+    }
+    const handResult = document.createElement("img");
+    handResult.src="./assets/images/paper-hand3-mirror.png"
+    handResult.className="hand-result-paper";
+    handResultRow.appendChild(handResult);
+    if(playerChoose==aiChoose) {
+      result.innerHTML="DRAW";
+      result.style.color="#000",
+      result.style.display="flex";
+    }
+    else if (aiChoose==3) {
+      if(gameMode==2){
+        result.innerHTML="LOSE";
+        result.style.color="#FF0000";
+        result.style.display="flex";
+        aiScore+=2;
+        aiScoreTable.innerHTML=aiScore;
+      }
+      else {
+        result.innerHTML="LOSE";
+        result.style.color="#FF0000";
+        result.style.display="flex";
+        aiScore++;
+        aiScoreTable.innerHTML=aiScore;
+      }
+    }
+    else if (aiChoose==1) {
+      if(gameMode==2){
+        result.innerHTML="WIN";
+        result.style.color="#008000";
+        result.style.display="flex";
+        playerScore+=2;
+        playerScoreTable.innerHTML=playerScore;
+      }
+      else {
+        result.innerHTML="WIN";
+        result.style.color="#008000";
+        result.style.display="flex";
+        playerScore++;
+        playerScoreTable.innerHTML=playerScore;
+      }        
+    }
+      nextRoundButton.style.display="block";
+      nextRoundButton.addEventListener("click",againGame);
+      function againGame(){
+        result.style.display="none";
+        nextRoundButton.style.display="none";
+        handResult.style.display="none";
+        handResultRow.innerHTML="";
+        imageDisplaysBlock();
+      }
+  },1600);
+}
+
+scissorsHandImage.addEventListener("click",gameScissors);
+function gameScissors() {
+  imageDisplaysNone();
+  playerChoose="3";
+  console.log(playerChoose);
+  const hand1 = document.createElement("img");
+  hand1.src="./assets/images/rock-hand3.png";
+  hand1.className="hand1";
+  firstRow.appendChild(hand1);
+  const hand1Mirror = document.createElement("img");
+  hand1Mirror.className="hand1-mirror";
+  hand1Mirror.src="./assets/images/rock-hand3-mirror.png"
+  firstRow.appendChild(hand1Mirror);
+  aiChoose = Math.floor(Math.random() * 3)+1;
+  setTimeout(()=>{
+    hand1.style.display="none";
+    hand1Mirror.style.display="none";
+    if(aiChoose==1) {
+      const aiResult = document.createElement("img");
+      aiResult.src="./assets/images/rock-hand3.png"
+      aiResult.className="ai-result-rock";
+      handResultRow.appendChild(aiResult);
+    }
+    else if(aiChoose==2) {
+      const aiResult = document.createElement("img");
+      aiResult.src="./assets/images/paper-hand3.png"
+      aiResult.className="ai-result-paper";
+      handResultRow.appendChild(aiResult);
+    }
+    else if(aiChoose==3) {
+      const aiResult = document.createElement("img");
+      aiResult.src="./assets/images/scissors-hand3.png"
+      aiResult.className="ai-result-scissors";
+      handResultRow.appendChild(aiResult);
+    }
+    const handResult = document.createElement("img");
+    handResult.src="./assets/images/scissors-hand3-mirror.png"
+    handResult.className="hand-result-scissors";
+    handResultRow.appendChild(handResult);
+    if(playerChoose==aiChoose) {
+      result.innerHTML="DRAW";
+      result.style.color="#000",
+      result.style.display="flex";
+    }
+    else if (aiChoose==1) {
+      if(gameMode==3){
+        result.innerHTML="LOSE";
+        result.style.color="#FF0000";
+        result.style.display="flex";
+        aiScore+=2;
+        aiScoreTable.innerHTML=aiScore;
+      }
+      else  {
+        result.innerHTML="LOSE";
+        result.style.color="#FF0000";
+        result.style.display="flex";
+        aiScore++;
+        aiScoreTable.innerHTML=aiScore;
+      }
+    }
+    else if (aiChoose==2) {
+      if(gameMode==3){
+        result.innerHTML="WIN";
+        result.style.color="#008000";
+        result.style.display="flex";
+        playerScore+=2;
+        playerScoreTable.innerHTML=playerScore;
+      }
+      else {
+        result.innerHTML="WIN";
+        result.style.color="#008000";
+        result.style.display="flex";
+        playerScore++;
+        playerScoreTable.innerHTML=playerScore;
+      }
+    }
+    nextRoundButton.style.display="block";
+    nextRoundButton.addEventListener("click",againGame);
+    function againGame(){
+      result.style.display="none";
+      nextRoundButton.style.display="none";
+      handResult.style.display="none";
+      handResultRow.innerHTML="";
+      imageDisplaysBlock();
+    }
+  },1600); 
+}
+

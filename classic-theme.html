@@ -38,19 +38,22 @@
     <div id="game-container">
         <div id="ai-score-table">
             <i class="fas fa-robot"></i>
-            <p class="ai-score">0</p>
+            <div id="ai-score">0</div>
         </div>
         <div id="player-score-table">
             <i class="fas fa-user"></i>
-            <p class="player-score">0</p>
+            <div id="player-score">0</div>
         </div>
+        <div id="result">DRAW</div>
         <div id="first-row">
             <img id="rock-hand"  src="./assets/images/rock-hand2.png">
             <img id="paper-hand"  src="./assets/images/paper-hand2.png">
-        </div>   
+        </div>
+        <div id="hand-result-row"></div>
         <div id="second-row">
             <img id="scissors-hand"  src="./assets/images/scissors-hand.png">
         </div>
+        <button id="next-round-btn">NEXT ROUND</button>
     </div>
     <script src="./app.js"></script>
 </body>

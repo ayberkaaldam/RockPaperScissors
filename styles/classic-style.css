@@ -97,7 +97,13 @@ body {
     background-color: white;
     z-index: 2;
 }
+#game-container {
+    height: calc(100vh - 215px);
+    display: flex;
+    flex-direction: column;
+}
 #rock-hand {
+    display: flex;
     width: 321px;
     height: 388px;
     margin-right:10px ;
@@ -113,7 +119,7 @@ body {
 #first-row {
     display: flex;
     justify-content: center;
-    padding-top: 75px;
+    padding-top: 25px;
 }
 #paper-hand:hover {
     animation: shakeHorizontal 0.82s cubic-bezier(.36,.07,.19,.97) both;
@@ -182,7 +188,7 @@ body {
     font-size: 75px;
     color: black;
 }
-.ai-score {
+#ai-score {
     color: black;
     margin-top: 50px;
     font-size: 50px;
@@ -206,11 +212,97 @@ body {
     font-size: 75px;
     color: black;
 }
-.player-score {
+#player-score {
     color: black;
     margin-top: 50px;
     font-size: 50px;
     font-family: 'Press Start 2P', cursive;
+}
+.hand1 {
+    padding-top: 150px;
+    padding-right: 150px;
+    width: 388px;
+    height: 321px;
+    animation: MoveUpDown 0.5s 3 ease-in-out;
+}
+.hand1-mirror {
+    padding-left: 150px;
+    padding-top: 150px;
+    width: 388px;
+    height: 321px;
+    animation: MoveUpDown 0.5s 3 ease-in-out;
+}
+.hand-result {
+    padding-left: 150px;
+    padding-top: 150px;
+    width: 388px;
+    height: 321px;
+}
+.ai-result-rock {
+    padding-top: 150px;
+    padding-right: 150px;
+    width: 388px;
+    height: 321px;
+}
+.ai-result-scissors {
+    padding-top: 150px;
+    padding-right: 150px;
+    width: 458px;
+    height: 321px;
+}
+.ai-result-paper {
+    
+    padding-top: 52px;
+    width: 588px;
+    height: 521px;
+}
+#next-round-btn {
+    width: 300px;
+    margin-top: 50px;
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 50px;
+    padding: 10px;
+    outline: none;
+    border: none;
+    background-color: transparent;
+}
+#result {
+    font-family: 'Press Start 2P', cursive;
+    position: absolute;
+    font-size: 50px;
+    width: 100vw;
+    justify-content: center;
+    padding-top: 50px;
+    display: none;
+}
+#hand-result-row {
+    display: flex;
+    justify-content: center;
+    padding-top: 75px;
+}
+.hand-result-paper {
+    padding-left: 150px;
+    padding-top: 52px;
+    width: 588px;
+    height: 521px;
+}
+.hand-result-scissors {
+    padding-top: 150px;
+    padding-left: 150px;
+    width: 458px;
+    height: 321px;
+}
+@keyframes MoveUpDown {
+    0%, 100% {
+      transform: translateY(0);
+      
+    }
+    50% {
+      transform: translateY(-50px);
+    }
 }
 
 @media only screen and (max-width:600px) {
@@ -296,13 +388,37 @@ body {
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin-top: 200px;
+        margin-top: 20px;
+        padding-top: 0px;
     }
     #second-row {
         display: flex;
         flex-direction: column;
         align-items: center;
         margin-top: 20px;
+    }
+    #ai-score-table {
+        align-items: flex-start;
+        padding-left: 10px;
+    }
+    #player-score-table {
+        align-items: flex-end;
+        padding-right: 10px;
+    }
+    .fa-robot {
+        font-size: 25px;
+    }
+    #ai-score {
+        font-size: 25px;
+        margin-top: 10px;
+        padding-left: 5px;
+    }
+    .fa-user {
+        font-size: 25px;
+    }
+    #player-score {
+        font-size: 25px;
+        margin-top: 10px;
     }
 
 }
