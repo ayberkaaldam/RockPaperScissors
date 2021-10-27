@@ -117,7 +117,7 @@ function changeBackgroundColorDefault() {
 }
 
 //Game Mode Change
-  var gameMode=0;
+var gameMode=0;
 
 function changeGameModeRock () {
   gameMode =1 ;
@@ -205,6 +205,8 @@ function gameRock(){
     }
     else if (aiChoose==2) {
       if(gameMode==1){
+        var audio = new Audio("./assets/sounds/lose.wav");
+        audio.play();
         result.innerHTML="LOSE";
         result.style.color="#FF0000";
         result.style.display="flex";
@@ -212,6 +214,8 @@ function gameRock(){
         aiScoreTable.innerHTML=aiScore;
       }
       else {
+        var audio = new Audio("./assets/sounds/lose.wav");
+        audio.play();
         result.innerHTML="LOSE";
         result.style.color="#FF0000";
         result.style.display="flex";
@@ -221,6 +225,8 @@ function gameRock(){
     }
     else if (aiChoose==3) {
       if(gameMode==1){
+        var audio = new Audio("./assets/sounds/win.wav");
+        audio.play();
         result.innerHTML="WIN";
         result.style.color="#008000";
         result.style.display="flex";
@@ -228,6 +234,8 @@ function gameRock(){
         playerScoreTable.innerHTML=playerScore;
       }
       else {
+        var audio = new Audio("./assets/sounds/win.wav");
+        audio.play();
         result.innerHTML="WIN";
         result.style.color="#008000";
         result.style.display="flex";
@@ -293,6 +301,8 @@ function gamePaper() {
     }
     else if (aiChoose==3) {
       if(gameMode==2){
+        var audio = new Audio("./assets/sounds/lose.wav");
+        audio.play();
         result.innerHTML="LOSE";
         result.style.color="#FF0000";
         result.style.display="flex";
@@ -300,6 +310,8 @@ function gamePaper() {
         aiScoreTable.innerHTML=aiScore;
       }
       else {
+        var audio = new Audio("./assets/sounds/lose.wav");
+        audio.play();
         result.innerHTML="LOSE";
         result.style.color="#FF0000";
         result.style.display="flex";
@@ -309,6 +321,8 @@ function gamePaper() {
     }
     else if (aiChoose==1) {
       if(gameMode==2){
+        var audio = new Audio("./assets/sounds/win.wav");
+        audio.play();
         result.innerHTML="WIN";
         result.style.color="#008000";
         result.style.display="flex";
@@ -316,6 +330,8 @@ function gamePaper() {
         playerScoreTable.innerHTML=playerScore;
       }
       else {
+        var audio = new Audio("./assets/sounds/win.wav");
+        audio.play();
         result.innerHTML="WIN";
         result.style.color="#008000";
         result.style.display="flex";
@@ -381,6 +397,8 @@ function gameScissors() {
     }
     else if (aiChoose==1) {
       if(gameMode==3){
+        var audio = new Audio("./assets/sounds/lose.wav");
+        audio.play();
         result.innerHTML="LOSE";
         result.style.color="#FF0000";
         result.style.display="flex";
@@ -388,6 +406,8 @@ function gameScissors() {
         aiScoreTable.innerHTML=aiScore;
       }
       else  {
+        var audio = new Audio("./assets/sounds/lose.wav");
+        audio.play();
         result.innerHTML="LOSE";
         result.style.color="#FF0000";
         result.style.display="flex";
@@ -397,6 +417,8 @@ function gameScissors() {
     }
     else if (aiChoose==2) {
       if(gameMode==3){
+        var audio = new Audio("./assets/sounds/win.wav");
+        audio.play();
         result.innerHTML="WIN";
         result.style.color="#008000";
         result.style.display="flex";
@@ -404,6 +426,8 @@ function gameScissors() {
         playerScoreTable.innerHTML=playerScore;
       }
       else {
+        var audio = new Audio("./assets/sounds/win.wav");
+        audio.play();
         result.innerHTML="WIN";
         result.style.color="#008000";
         result.style.display="flex";
